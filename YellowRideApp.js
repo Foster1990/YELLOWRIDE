@@ -46,45 +46,45 @@ export default function YellowRideApp() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "0 auto", padding: 16 }}>
-      <h1 style={{ fontSize: 24, fontWeight: "bold", textAlign: "center" }}>YellowRide Navrongo</h1>
+    <div className="max-w-md mx-auto p-4 space-y-4">
+      <h1 className="text-2xl font-bold text-center">YellowRide Navrongo</h1>
 
       {!registered ? (
-        <div>
+        <div className="space-y-3">
           <label>Name</label>
-          <input value={user.name} onChange={(e) => setUser({ ...user, name: e.target.value })} />
+          <input className="w-full border p-2" value={user.name} onChange={(e) => setUser({ ...user, name: e.target.value })} />
           <label>Phone Number</label>
-          <input value={user.phone} onChange={(e) => setUser({ ...user, phone: e.target.value })} />
-          <button onClick={handleRegister}>Register</button>
-          <button onClick={() => setRegisteringDriver(true)}>I'm a Driver</button>
+          <input className="w-full border p-2" value={user.phone} onChange={(e) => setUser({ ...user, phone: e.target.value })} />
+          <button className="w-full bg-yellow-500 text-white py-2" onClick={handleRegister}>Register</button>
+          <button className="w-full border py-2" onClick={() => setRegisteringDriver(true)}>I'm a Driver</button>
         </div>
       ) : !registeringDriver ? (
-        <div>
+        <div className="space-y-3">
           <label>Ride Type</label>
-          <select value={rideRequest.type} onChange={(e) => setRideRequest({ ...rideRequest, type: e.target.value })}>
+          <select className="w-full border p-2" value={rideRequest.type} onChange={(e) => setRideRequest({ ...rideRequest, type: e.target.value })}>
             <option value="Taxi">Taxi</option>
             <option value="Yellow-Yellow">Yellow-Yellow</option>
           </select>
           <label>Pickup Location</label>
-          <input value={rideRequest.pickup} onChange={(e) => setRideRequest({ ...rideRequest, pickup: e.target.value })} />
+          <input className="w-full border p-2" value={rideRequest.pickup} onChange={(e) => setRideRequest({ ...rideRequest, pickup: e.target.value })} />
           <label>Destination</label>
-          <input value={rideRequest.destination} onChange={(e) => setRideRequest({ ...rideRequest, destination: e.target.value })} />
-          <button onClick={handleRequestRide}>Request Ride</button>
+          <input className="w-full border p-2" value={rideRequest.destination} onChange={(e) => setRideRequest({ ...rideRequest, destination: e.target.value })} />
+          <button className="w-full bg-green-600 text-white py-2" onClick={handleRequestRide}>Request Ride</button>
         </div>
       ) : (
-        <div>
+        <div className="space-y-3">
           <label>Driver Name</label>
-          <input value={driver.name} onChange={(e) => setDriver({ ...driver, name: e.target.value })} />
+          <input className="w-full border p-2" value={driver.name} onChange={(e) => setDriver({ ...driver, name: e.target.value })} />
           <label>Phone Number</label>
-          <input value={driver.phone} onChange={(e) => setDriver({ ...driver, phone: e.target.value })} />
+          <input className="w-full border p-2" value={driver.phone} onChange={(e) => setDriver({ ...driver, phone: e.target.value })} />
           <label>Vehicle Type</label>
-          <select value={driver.vehicle} onChange={(e) => setDriver({ ...driver, vehicle: e.target.value })}>
+          <select className="w-full border p-2" value={driver.vehicle} onChange={(e) => setDriver({ ...driver, vehicle: e.target.value })}>
             <option value="Taxi">Taxi</option>
             <option value="Yellow-Yellow">Yellow-Yellow</option>
           </select>
           <label>Plate Number</label>
-          <input value={driver.plate} onChange={(e) => setDriver({ ...driver, plate: e.target.value })} />
-          <button onClick={handleRegisterDriver}>Register Driver</button>
+          <input className="w-full border p-2" value={driver.plate} onChange={(e) => setDriver({ ...driver, plate: e.target.value })} />
+          <button className="w-full bg-blue-600 text-white py-2" onClick={handleRegisterDriver}>Register Driver</button>
         </div>
       )}
     </div>
